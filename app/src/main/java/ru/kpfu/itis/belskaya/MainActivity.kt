@@ -3,9 +3,7 @@ package ru.kpfu.itis.belskaya
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import ru.kpfu.itis.belskaya.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private val maxWeight: Float = 250f
@@ -14,86 +12,108 @@ class MainActivity : AppCompatActivity() {
     private val minWeight: Float = 0f
     private val minHeight: Int = 0
     private val minAge: Int = 0
-    private var name: EditText? = null
-    private var height: EditText? = null
-    private var weight: EditText? =  null
-    private var age: EditText? = null
-    private var button: Button? = null
-    private var result: TextView? = null
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = _binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        name = findViewById(R.id.editTextName)
-        height = findViewById(R.id.editTextHeight)
-        weight = findViewById(R.id.editTextWeight)
-        age = findViewById(R.id.editTextAge)
-        result = findViewById(R.id.textViewResult)
-        button = findViewById(R.id.button)
-        button?.setOnClickListener {
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.calculateBtn.setOnClickListener {
             if (checkName() && checkHeight() && checkWeight() && checkAge()) {
-                var n = name?.getText().toString()
-                var h = height?.getText().toString().toInt()
-                var w = weight?.getText().toString().toFloat()
-                var a = age?.getText().toString().toInt()
-                var value = calculate(n, h, w, a)
-                result?.setText("Ответ: $value")
+                val n = binding.etName.getText().toString()
+                val h = binding.etHeight.getText().toString().toInt()
+                val w = binding.etWeight.getText().toString().toFloat()
+                val a = binding.etAge.getText().toString().toInt()
+                val value = calculate(n, h, w, a)
+                binding.tvResult.setText("Ответ: $value")
             } else {
-                result?.setText("Данные введены некорректно")
+                binding.tvResult.setText("Данные введены некорректно")
             }
-            result?.setVisibility(View.VISIBLE)
+            binding.tvResult.setVisibility(View.VISIBLE)
         }
 
     }
 
-    fun checkName(): Boolean {
-        if (name?.getText().toString().length == 0) {
-            name?.setError("Пустое поле")
-        } else {
-            return true
+    private fun checkName(): Boolean =  when(binding.etName.getText().toString().length) {
+        0 -> {
+            binding.etName.setError("Пустое поле");
+            false
         }
-        return false
+        else -> true
     }
 
-    fun checkHeight(): Boolean {
-        if (height?.getText().toString().length == 0) {
-            height?.setError("Пустое поле")
-        } else if (height?.getText().toString().toInt() <= minHeight) {
-            height?.setError("Рост должен быть больше $minHeight")
-        } else if (height?.getText().toString().toInt() >= maxHeight) {
-            height?.setError("Рост должен быть меньше $maxHeight")
-        } else {
-            return true
+    private fun checkHeight(): Boolean {
+        val s: String = binding.etHeight.getText().toString()
+        val ans = when(s.length) {
+            0 -> {
+                binding.etHeight.setError("Пустое поле")
+                false
+            }
+            else -> {
+                when {
+                    s.toInt() <= minHeight -> {
+                        binding.etHeight.setError("Рост должен быть больше $minHeight")
+                        false
+                    }
+                    s.toInt() >= maxHeight -> {
+                        binding.etHeight.setError("Рост должен быть меньше $maxHeight")
+                        false
+                    }
+                    else -> true
+                }
+            }
         }
-        return false
+        return ans
     }
 
-    fun checkWeight(): Boolean {
-        if (weight?.getText().toString().length == 0) {
-            weight?.setError("Пустое поле")
-        } else if (weight?.getText().toString().toFloat() <= minWeight) {
-            weight?.setError("Вес должен быть больше $minWeight")
-        } else if (weight?.getText().toString().toFloat() >= maxWeight) {
-            weight?.setError("Вес должен быть меньше $maxWeight")
-        } else {
-            return true
+    private fun checkWeight(): Boolean {
+        val s: String = binding.etWeight.getText().toString()
+        val ans = when(s.length) {
+            0 -> {
+                binding.etWeight.setError("Пустое поле")
+                false
+            }
+            else -> {
+                when {
+                    s.toInt() <= minWeight -> {
+                        binding.etWeight.setError("Вес должен быть больше $minWeight")
+                        false
+                    }
+                    s.toInt() >= maxWeight -> {
+                        binding.etWeight.setError("Вес должен быть меньше $maxWeight")
+                        false
+                    }
+                    else -> true
+                }
+            }
         }
-        return false
+        return ans
     }
 
-    fun checkAge(): Boolean {
-        if (age?.getText().toString().length == 0) {
-            age?.setError("Пустое поле")
-        } else if (age?.getText().toString().toInt() <= minAge) {
-            age?.setError("Возраст должен быть больше $minAge")
-        } else if (age?.getText().toString().toInt() >= maxAge) {
-            age?.setError("Возраст должен быть меньше $maxAge")
-        } else {
-            return true
+    private fun checkAge(): Boolean {
+        val s: String = binding.etAge.getText().toString()
+        val ans = when(s.length) {
+            0 -> {
+                binding.etAge.setError("Пустое поле")
+                false
+            }
+            else -> {
+                when {
+                    s.toInt() <= minAge -> {
+                        binding.etAge.setError("Возраст должен быть больше $minAge")
+                        false
+                    }
+                    s.toInt() >= maxAge -> {
+                        binding.etAge.setError("Возраст должен быть меньше $maxAge")
+                        false
+                    }
+                    else -> true
+                }
+            }
         }
-        return false
+        return ans
     }
 
-    fun calculate(name: String, height: Int, weight: Float, age: Int): Float {
-        return (name.length + height*weight + age)
-    }
+    private fun calculate(name: String, height: Int, weight: Float, age: Int): Float = (name.length + height * weight + age)
+
 }
