@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Anime</string>
+    <string name="main_fragment_menu">Main</string>
+    <string name="death_note_fragment_menu">Death note</string>
+    <string name="naruto_fragment_menu">Naruto</string>
+    <string name="attack_on_titan_fragment_menu">Attack on titan</string>
+    <string name="anime_fragment_menu">Anime</string>
+    <string name="secret_text">Error 404</string>
+    <string name="naruto_secret_text">Открыть секрет Наруто</string>
+    <string name="attack_secret_text">Открыть подвал</string>
+    <string name="anime_secret_text">Открыть список аниме</string>
+    <string name="main_fragment_value">MainFragment</string>
+    <string name="anime_fragment_value">AnimeFragment</string>
+    <string name="attack_fragment_value">AttackOnTitanFragment</string>
+    <string name="deathnote_fragment_value">DeathNoteFragment</string>
+    <string name="naruto_fragment_value">NarutoFragment</string>
+
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mainFragment"
+        android:enabled="true"
+        android:title="@string/main_fragment_menu"
+        android:icon="@drawable/ic_outline_menu_24"
+        />
+    <item
+        android:id="@+id/animeFragment"
+        android:enabled="true"
+        android:title="@string/anime_fragment_menu"
+        android:icon="@drawable/ic_outline_looks_24"
+        />
+
+    <item
+        android:id="@+id/deathNoteFragment"
+        android:enabled="true"
+        android:title="@string/death_note_fragment_menu"
+        android:icon="@drawable/ic_outline_import_contacts_24"
+        />
+
+    <item
+        android:id="@+id/attackOnTitanFragment"
+        android:enabled="true"
+        android:title="@string/attack_on_titan_fragment_menu"
+        android:icon="@drawable/ic_outline_sentiment_very_dissatisfied_24"
+        />
+
+    <item
+        android:id="@+id/narutoFragment"
+        android:enabled="true"
+        android:title="@string/naruto_fragment_menu"
+        android:icon="@drawable/ic_outline_sports_kabaddi_24"
+        />
+
+</menu>

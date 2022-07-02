@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="ru.kpfu.itis.homework2.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_secretFragment"
+            app:destination="@id/secretFragment"
+            app:popUpTo="@id/mainFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpToSaveState="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/animeFragment"
+        android:name="ru.kpfu.itis.homework2.AnimeFragment"
+        android:label="fragment_anime"
+        tools:layout="@layout/fragment_anime" >
+        <action
+            android:id="@+id/action_animeFragment_to_secretFragment"
+            app:destination="@id/secretFragment"
+            app:popUpTo="@id/animeFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpToSaveState="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/deathNoteFragment"
+        android:name="ru.kpfu.itis.homework2.DeathNoteFragment"
+        android:label="fragment_death_note"
+        tools:layout="@layout/fragment_death_note" >
+        <action
+            android:id="@+id/action_deathNoteFragment_to_secretFragment"
+            app:destination="@id/secretFragment"
+            app:popUpTo="@id/deathNoteFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpToSaveState="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/narutoFragment"
+        android:name="ru.kpfu.itis.homework2.NarutoFragment"
+        android:label="fragment_naruto"
+        tools:layout="@layout/fragment_naruto" >
+        <action
+            android:id="@+id/action_narutoFragment_to_secretFragment"
+            app:destination="@id/secretFragment"
+            app:popUpTo="@id/narutoFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpToSaveState="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/secretFragment"
+        android:name="ru.kpfu.itis.homework2.SecretFragment"
+        android:label="fragment_secret"
+        tools:layout="@layout/fragment_secret" />
+    <fragment
+        android:id="@+id/attackOnTitanFragment"
+        android:name="ru.kpfu.itis.homework2.AttackOnTitanFragment"
+        android:label="fragment_attack_on_titan"
+        tools:layout="@layout/fragment_attack_on_titan" >
+        <action
+            android:id="@+id/action_attackOnTitanFragment_to_secretFragment"
+            app:destination="@id/secretFragment"
+            app:popUpTo="@id/attackOnTitanFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpToSaveState="true"/>
+    </fragment>
+</navigation>
