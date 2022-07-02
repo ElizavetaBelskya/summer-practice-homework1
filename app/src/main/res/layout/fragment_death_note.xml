@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.77" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/iv_death_note"
         android:layout_width="472dp"
         android:layout_height="787dp"
         android:src="@drawable/img_death_note"

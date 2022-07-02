@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.77" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_anime"
         android:layout_width="760dp"
         android:layout_height="1028dp"
         android:src="@drawable/totoro"

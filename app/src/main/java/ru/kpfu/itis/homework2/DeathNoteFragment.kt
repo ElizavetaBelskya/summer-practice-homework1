@@ -18,7 +18,7 @@ class DeathNoteFragment : Fragment(R.layout.fragment_death_note) {
                 findNavController().navigate(
                     R.id.action_deathNoteFragment_to_secretFragment,
                     SecretFragment.createBundle(
-                        ("DeathNoteFragment").toString()
+                        (getString(R.string.deathnote_fragment_value))
                     ),
                 )
             }

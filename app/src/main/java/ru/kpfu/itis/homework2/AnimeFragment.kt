@@ -19,7 +19,7 @@ class AnimeFragment : Fragment(R.layout.fragment_anime) {
                 findNavController().navigate(
                     R.id.action_animeFragment_to_secretFragment,
                     SecretFragment.createBundle(
-                        ("AnimeFragment").toString()
+                        (getString(R.string.anime_fragment_value)).toString()
                     ),
                 )
             }

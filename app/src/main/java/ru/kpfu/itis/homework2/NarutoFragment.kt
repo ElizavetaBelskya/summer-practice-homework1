@@ -19,7 +19,7 @@ class NarutoFragment : Fragment(R.layout.fragment_naruto) {
                 findNavController().navigate(
                     R.id.action_narutoFragment_to_secretFragment,
                     SecretFragment.createBundle(
-                        ("NarutoFragment").toString()
+                        (getString(R.string.naruto_fragment_value))
                     ),
                 )
             }

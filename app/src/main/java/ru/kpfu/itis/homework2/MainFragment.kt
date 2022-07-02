@@ -21,7 +21,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                     findNavController().navigate(
                         R.id.action_mainFragment_to_secretFragment,
                         SecretFragment.createBundle(
-                            ("MainFragment").toString()
+                            (getString(R.string.main_fragment_value))
                         ),
                     )
                 }

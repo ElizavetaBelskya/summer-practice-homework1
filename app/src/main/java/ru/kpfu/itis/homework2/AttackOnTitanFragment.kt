@@ -19,7 +19,7 @@ class AttackOnTitanFragment : Fragment(R.layout.fragment_attack_on_titan) {
                 findNavController().navigate(
                     R.id.action_attackOnTitanFragment_to_secretFragment,
                     SecretFragment.createBundle(
-                        ("AttackOnTitanFragment").toString()
+                        (getString(R.string.attack_fragment_value)).toString()
                     ),
                 )
             }
